@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRef } from "react";
 import Project from "../components/Project";
 import Section from "../components/Section";
 import Sidebar from "../components/Sidebar";
@@ -10,7 +11,7 @@ export default function Home() {
         <title>Mamoor J. Khan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col p-7 items-center w-full text-base">
+      <main className="flex flex-col p-5 md:p-7 md:pb-0 pb-0 items-center w-full text-base">
         <div className="max-w-screen-xl">
           <div className="mb-7 p-5 bg-gray-800 text-white rounded-md">
             <h1 className="text-3xl md:text-5xl mb-3">Mamoor Jaan Khan</h1>
@@ -33,26 +34,9 @@ export default function Home() {
               </a>
             </p>
           </div>
-          <div className="mb-7 p-5 flex justify-between sticky md:hidden top-2 text-white bg-gray-500 shadow-2xl rounded-md z-10">
-            <p>Hello</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </div>
-          <div className="flex">
+          <div className="flex flex-col md:flex-row">
             <Sidebar />
-            <div className="w-full md:w-4/5 p-5 bg-gray-800 text-white rounded-md">
+            <div className="mb-5 md:mb-7 w-full md:w-4/5 p-5 bg-gray-800 text-white rounded-md">
               <Section id="projects" title="Projects">
                 <Project title="duh" image="/yo.jpg">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
