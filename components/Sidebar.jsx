@@ -9,8 +9,8 @@ const Sidebar = () => {
     classList.toggle("flex-col");
   };
   return (
-    <div className="sticky top-2 z-10 pb-7 md:self-start">
-      <div className="mb-7 p-5 scale-[1.017] flex justify-between md:hidden text-white bg-gray-600 shadow-2xl rounded-md">
+    <div className="min-w-[20%] sticky top-2 z-10 pb-7 md:self-start">
+      <div className="mb-7 p-5 scale-105 flex justify-between md:hidden text-white bg-gray-600 shadow-2xl rounded-md">
         <p>Hello</p>
         <button onClick={extendSidebar}>
           <svg
@@ -30,12 +30,14 @@ const Sidebar = () => {
         </button>
       </div>
       <div
-        className="md:mr-7 p-5 hidden md:flex md:flex-col bg-gray-600 shadow-2xl md:shadow-none text-lg text-white rounded-md"
+        className="md:mr-7 p-5 scale-[1.03] md:scale-100 hidden md:flex md:flex-col bg-gray-600 shadow-2xl md:shadow-none text-lg text-white rounded-md"
         ref={sidebar}
       >
         <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a href="#">BrokenLink1</a>
+        <a href="#links">Links</a>
       </div>
     </div>
   );
