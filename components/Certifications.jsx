@@ -1,13 +1,8 @@
-import Section from "./Section";
 import Cert from "./Cert";
 
 const Certifications = ({ certs }) => {
   return (
-    <Section
-      className="flex flex-col items-center"
-      id="certificates"
-      title="Certificates"
-    >
+    <>
       {certs.map((value) => {
         if (value.type === "Specialization")
           return (
@@ -50,7 +45,7 @@ const Certifications = ({ certs }) => {
           />
         );
       })}
-    </Section>
+    </>
   );
 };
 
