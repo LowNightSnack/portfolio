@@ -35,8 +35,10 @@ const Sidebar = ({ links, highlights }) => {
         </button>
       </div>
       <div
-        className={`flex flex-col md:mr-7 scale-[1.03] md:scale-100 bg-gray-600 shadow-2xl md:shadow-none text-lg text-white rounded-md transition-all ${
-          !extendSidebar ? "opacity-0 pointer-events-none h-0" : "opacity-1"
+        className={`flex flex-col md:mr-7 scale-[1.03] md:scale-100 bg-gray-600 shadow-2xl md:shadow-none text-lg text-white rounded-md transition-all md:opacity-100 md:pointer-events-auto md:h-auto ${
+          !extendSidebar
+            ? "opacity-0 pointer-events-none h-0"
+            : "opacity-100 pointer-events-auto"
         }`}
         ref={sidebar}
       >
