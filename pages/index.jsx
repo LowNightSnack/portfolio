@@ -165,7 +165,10 @@ const Home = () => {
                   href="https://linkedin.com/in/mamoor-jaan-khan/"
                   target="_blank"
                 >
-                  <FontAwesomeIcon className="h-6 w-6 mr-2" icon={faLinkedin} />
+                  <FontAwesomeIcon
+                    className="h-6 w-[6!important] mr-2"
+                    icon={faLinkedin}
+                  />
                   Mamoor Jaan Khan
                 </a>
                 <a
@@ -191,7 +194,10 @@ const Home = () => {
                   href="https://github.com/LowNightSnack/"
                   target="_blank"
                 >
-                  <FontAwesomeIcon className="h-6 w-6 mr-2" icon={faGithub} />
+                  <FontAwesomeIcon
+                    className="h-6 w-[6!important] mr-2"
+                    icon={faGithub}
+                  />
                   LowNighSnack
                 </a>
                 <a
@@ -199,7 +205,10 @@ const Home = () => {
                   href="https://twitter.com/LowNightSnack"
                   target="_blank"
                 >
-                  <FontAwesomeIcon className="h-6 w-6 mr-2" icon={faTwitter} />
+                  <FontAwesomeIcon
+                    className="h-6 w-[6!important] mr-2"
+                    icon={faTwitter}
+                  />
                   LowNightSnack
                 </a>
                 <a
@@ -207,7 +216,10 @@ const Home = () => {
                   href="https://twitch.tv/LowNightSnack"
                   target="_blank"
                 >
-                  <FontAwesomeIcon className="h-6 w-6 mr-2" icon={faTwitch} />
+                  <FontAwesomeIcon
+                    className="h-6 w-[6!important] mr-2"
+                    icon={faTwitch}
+                  />
                   LowNightSnack
                 </a>
               </Section>

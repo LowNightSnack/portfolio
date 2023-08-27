@@ -6,3 +6,27 @@ body {
   font-family: monospace;
   background-color: black;
 }
+
+.font-aqrada {
+  font-family: "AQRADA", sans-serif;
+}
+
+.font-basement {
+  font-family: "BasementGrotesque", serif;
+}
+
+.font-c059 {
+  font-family: "C059", serif;
+}
+
+.font-maghfirea {
+  font-family: "Maghfirea", serif;
+}
+
+.font-minecraft {
+  font-family: "Minecraft", serif;
+}
+
+.font-wavefont {
+  font-family: "Wavefont", cursive;
+}
