@@ -2,35 +2,35 @@
 
 @font-face {
   font-family: "AQRADA";
-  src: url("./fonts/AQRADA.otf") format("opentype");
+  src: url("/fonts/AQRADA.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "BasementGrotesque";
-  src: url("./fonts/BasementGrotesque.woff2");
+  src: url("/fonts/BasementGrotesque.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "C059";
-  src: url("./fonts/c059.otf") format("opentype");
+  src: url("/fonts/c059.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Maghfirea";
-  src: url("./fonts/Maghfirea.otf") format("opentype");
+  src: url("/fonts/Maghfirea.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Minecraft";
-  src: url("./fonts/minecraft.ttf") format("opentype");
+  src: url("/fonts/minecraft.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
