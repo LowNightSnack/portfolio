@@ -1,42 +1,29 @@
-import { forwardRef } from "react";
-import { HeroCardsRefType } from "../types/HeroCardType";
-
-const HeroCard = forwardRef(
-  (
-    {
-      title,
-      subtitle,
-      addClasses,
-      index,
-    }: {
-      title: string;
-      subtitle: string;
-      addClasses: { title: string; subtitle: string };
-      index: number;
-    },
-    ref: HeroCardsRefType
-  ) => (
-    <div className={`h-screen w-full`}>
-      <div className="absolute top-0 left-0 w-full h-full grid grid-rows-5 grid-cols-1 items-center pointer-events-none">
-        <div
-          className={`pl-8 pointer-events-auto row-start-${index + 1} text-cl${
-            index === 2 ? "1" : "3"
-          }`}
-          style={{ zIndex: `${index + 1}` }}
-          ref={(e) => {
-            ref.current[1][`c${index + 1}`] = e;
-          }}
-        >
-          <h1 className={`${addClasses.title}`}>{title}</h1>
-          <h2 className={`${addClasses.subtitle}`}>{subtitle}</h2>
-        </div>
-      </div>
-      <div
-        className={`relative w-full h-full bg-cl${index + 1}`}
-        style={{ zIndex: `${index}` }}
-      />
+const HeroCard = ({
+  title,
+  subtitle,
+  addClasses,
+  index,
+}: {
+  title: string;
+  subtitle: string;
+  addClasses: { title: string; subtitle: string };
+  index: number;
+}) => (
+  <div
+    className={`relative bg-cl${index + 1} h-screen flex flex-col`}
+    style={{ zIndex: `${index + 1}` }}
+  >
+    <div className="flex-1"></div>
+    <div
+      className={`pl-4 md:pl-8 py-10 sticky bottom-1/2 bg-cl pointer-events-auto row-start-${
+        index + 1
+      } text-cl${index === 2 ? "1" : "3"}`}
+      style={{ zIndex: `${index + 1}` }}
+    >
+      <h1 className={`${addClasses.title}`}>{title}</h1>
+      <h2 className={`${addClasses.subtitle}`}>{subtitle}</h2>
     </div>
-  )
+  </div>
 );
 
 export default HeroCard;

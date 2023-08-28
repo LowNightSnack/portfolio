@@ -1,11 +1,10 @@
-import { useEffect, useRef } from "react";
-import { HeroCardsType } from "../types/HeroCardType";
+import { Fragment } from "react";
 import HeroCard from "../components/HeroCard";
 
 const heroCards = [
   {
     title: "Mamoor Jaan Khan",
-    subtitle: "Nerd",
+    subtitle: "Software Engineer",
     addClasses: {
       title: "font-aqrada text-2xl md:text-5xl",
       subtitle: "font-aqrada mt-3 md:mt-10 text-lg md:text-2xl",
@@ -15,111 +14,60 @@ const heroCards = [
     title: "Mamoor Jaan Khan",
     subtitle: "Computer Science Enthusiast",
     addClasses: {
-      title:
-        "font-basement bg-cl2 md:bg-transparent w-fit text-2xl md:text-7xl",
-      subtitle:
-        "font-basement bg-cl2 md:bg-transparent w-fit mt-0 md:mt-3 text-lg md:text-3xl",
+      title: "font-basement text-2xl md:text-7xl",
+      subtitle: "font-basement mt-0 md:mt-3 text-lg md:text-3xl",
     },
   },
   {
     title: "Mamoor Jaan Khan",
-    subtitle: "Software Engineer",
+    subtitle: "Nerd",
     addClasses: {
-      title: "font-c059 bg-cl3 w-fit text-2xl md:text-7xl",
-      subtitle: "font-c059 bg-cl3 w-fit mt-1 md:mt-3 text-lg md:text-3xl",
+      title: "font-c059 bg-cl3 text-4xl md:text-7xl",
+      subtitle: "font-c059 bg-cl3 mt-1 md:mt-3 text-2xl md:text-3xl",
     },
   },
   {
     title: "Mamoor Jaan Khan",
     subtitle: "Gamer",
     addClasses: {
-      title:
-        "font-maghfirea bg-cl4 md:bg-transparent w-fit text-2xl md:text-8xl",
-      subtitle:
-        "font-maghfirea bg-cl4 md:bg-transparent w-fit mt-1 text-lg md:text-5xl",
+      title: "font-maghfirea text-5xl md:text-8xl",
+      subtitle: "font-maghfirea mt-1 text-3xl md:text-5xl",
     },
   },
   {
     title: "Mamoor Jaan Khan",
     subtitle: "Human",
     addClasses: {
-      title:
-        "font-minecraft bg-cl5 md:bg-transparent w-fit text-2xl md:text-7xl",
-      subtitle:
-        "font-minecraft bg-cl5 md:bg-transparent w-fit mt-0 md:mt-3 text-lg md:text-3xl",
+      title: "font-minecraft text-4xl md:text-7xl",
+      subtitle: "font-minecraft mt-0 md:mt-3 text-2xl md:text-3xl",
     },
   },
 ];
 
 const Home = () => {
-  const scrollApi = useRef<HeroCardsType>([
-    { e1: null, e2: null, e3: null, e4: null, e5: null },
-    { c1: null, c2: null, c3: null, c4: null, c5: null },
-    { r1: null, r2: null, r3: null, r4: null, r5: null },
-  ]);
-
-  const sameSpeed = useRef<{
-    jojo1: HTMLDivElement;
-    jojo2: HTMLDivElement;
-    jojo3: HTMLDivElement;
-    jojo4: HTMLDivElement;
-    jojo5: HTMLDivElement;
-  }>({ jojo1: null, jojo2: null, jojo3: null, jojo4: null, jojo5: null });
-  const lock = useRef<boolean>(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollVal = window.scrollY;
-      const slowFactor = 0.9;
-      const translateString = `0 ${slowFactor * scrollVal}px`;
-
-      for (let i = 1; i <= 5; i++) {
-        scrollApi.current[1][`c${i}`].style.translate = translateString;
-        // scrollApi.current[2][`r${i}`].style.translate = translateString;
-        // sameSpeed.current[`jojo${i}`].style.translate = translateString;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div>
       <div className="isolate text relative h-screen w-full text-cl3">
         {heroCards.map((card, i) => (
-          <HeroCard
-            key={`heroCard#${i}`}
-            title={card.title}
-            subtitle={card.subtitle}
-            addClasses={card.addClasses}
-            index={i}
-            ref={scrollApi}
-          />
+          <Fragment key={`heroCard#${i}`}>
+            <HeroCard
+              title={card.title}
+              subtitle={card.subtitle}
+              addClasses={card.addClasses}
+              index={i}
+            />
+            <div
+              className={`fixed bottom-0 right-0 bg-cl${
+                i + 1
+              } rounded-tl-full h-${5 - i}00px w-${5 - i}00px md:h-${
+                7 - i
+              }00px  md:w-${7 - i}00px`}
+              style={{
+                zIndex: `${i}`,
+              }}
+            />
+          </Fragment>
         ))}
-        <div
-          className="fixed bottom-0 right-0 bg-cl1 w-[700px] h-[700px] rounded-tl-full"
-          style={{ zIndex: `0` }}
-        />
-        <div
-          className="fixed bottom-0 right-0 bg-cl2 w-[600px] h-[600px] rounded-tl-full"
-          style={{ zIndex: `1` }}
-        />
-        <div
-          className="fixed bottom-0 right-0 bg-cl3 w-[500px] h-[500px] rounded-tl-full"
-          style={{ zIndex: `2` }}
-        />
-        <div
-          className="fixed bottom-0 right-0 bg-cl4 w-[400px] h-[400px] rounded-tl-full"
-          style={{ zIndex: `3` }}
-        />
-        <div
-          className="fixed bottom-0 right-0 bg-cl5 w-[300px] h-[300px] rounded-tl-full"
-          style={{ zIndex: `4` }}
-        />
         <h3
           className={`fixed bottom-0 left-0 text-cl3 font-wavefont max-w-full overflow-hidden whitespace-nowrap`}
           style={{ zIndex: 5 }}
@@ -154,7 +102,10 @@ const Home = () => {
           you
         </h3>
         {/* load classes here */}
-        <div className="text-cl1 text-cl3 row-start-1 row-start-2 row-start-3 row-start-4 row-start-5" />
+        <div
+          className="text-cl1 text-cl3 row-start-1 row-start-2 row-start-3 row-start-4 row-start-5 w-700px w-600px w-500px w-400px w-300px w-200px w-100px h-700px h-600px h-500px h-400px h-300px h-200px h-100px"
+          style={{ width: 0, height: 0 }}
+        />
       </div>
     </div>
   );
