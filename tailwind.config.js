@@ -13,7 +13,6 @@ module.exports = {
         cl3: "#EDF2F4",
         cl4: "#EF233C",
         cl5: "#D90429",
-        cl6: "#669BBC",
       },
       spacing: {
         "700px": "700px",
