@@ -20,8 +20,8 @@ const HeroCard = ({
       } text-cl${index === 2 ? "1" : "3"}`}
       style={{ zIndex: `${index + 1}` }}
     >
-      <h1 className={`${addClasses.title}`}>{title}</h1>
-      <h2 className={`${addClasses.subtitle}`}>{subtitle}</h2>
+      <h1 className={addClasses.title}>{title}</h1>
+      <h2 className={addClasses.subtitle}>{subtitle}</h2>
     </div>
   </div>
 );
