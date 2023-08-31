@@ -1,6 +1,9 @@
 import { Fragment } from "react";
 import HeroCard from "../components/HeroCard";
 import Project from "../components/Project";
+import Experience from "../components/Experience";
+import ProfileLink from "../components/ProfileLink";
+
 import Head from "next/head";
 
 const heroCards = [
@@ -59,6 +62,98 @@ const projects = [
     desc: "A landing page for a ninja warrior NFTs launch which didn't happen. Built with React, TailwindCSS, TypeScript. Was cool",
     rating: 8.5,
   },
+  {
+    title: "Dramz Auction House",
+    link: "https://dramzauctionhouse.com",
+    desc: "An auction house to sell assets like NFTs and FTs in bundles with different creators. Live bidding, chats and memberships as well. So cool. Sad that they shut it down. Built with React, TailwindCSS, TypeScript for front end and Python, Flask, Postgres, Docker for the back end. This was super fun",
+    rating: 9,
+  },
+  {
+    title: "Dramz Auction House on Polygon",
+    link: "https://polygon.dramzauctionhouse.com",
+    desc: "Auction house landing and presales page to expand on the Polygon network. Was cool",
+    rating: 7.5,
+  },
+  {
+    title: "Voteaire",
+    link: "https://voteaire.io",
+    desc: "Decentralize voting platform with different kinds of votings and vote weights. My main work was debugging mostly because I joined right when this project was going on. Built with React, Bulma for front end and Postgres, Flask, FastAPI, Docker, DBSync for Cardano for backend",
+    rating: 7,
+  },
+  {
+    title: "'Sup?",
+    link: "https://lownightsnack-sup.vercel.app",
+    desc: "Was meant to be a student information system but then I lost motivation. But I wanted to create everything used in the site from scratch. I built the entire scrollbar from the ground up because it was interfering with something. I don't remember what it was but yeah, that happended. Used NextJS, TailwindCSS, Redux for the front end. The back end was to be called `Boii` btw",
+    rating: 9,
+  },
+  {
+    title: "Archivio Mario Russo clone",
+    link: "https://archiviomariorusso-clone.vercel.app/",
+    desc: "Someone told me to clone the original so I did whatever I could in a day and told them to check it out. Honeslty, turned out pretty good for a day's work. There is an easter egg. When you click the text `Archivio Mario Russo` at the start, there is a payment gateway integration. Just to see if I can do it. Built with NextJS, TailwindCSS",
+    rating: 8,
+  },
+  {
+    title: "Github old UI clone",
+    link: "http://github-profile-clone-bulma.vercel.app/",
+    desc: "People will forget the old UI but I won't. Because I cloned it. Looked pretty good too. The new is also good. But they silently released it and now I just feel like they should have atleast given it a proper farewell. Built with NextJS, Bulma",
+    rating: 8,
+  },
+  {
+    title: "CPUS website",
+    link: "https://www.cpus.co.in",
+    desc: "The first buck I made was building this for my friend's parents' business. Was awesome. Built with NextJS, Bulma",
+    rating: "∞",
+  },
+  {
+    title: "Vulcanzy 2023",
+    link: "https://vulcanzy-2023.vercel.app/",
+    desc: "Website for our annual techno-cultural fest Vulcanzy 2023. Built with my friend Riyaz. Were super fun times. The event was super fun too. Built with NextJS, TailwindCSS.",
+    rating: 9,
+  },
+  {
+    title: "Misc",
+    link: null,
+    desc: "There are probably several more. I might have lost the links",
+    rating: "idk",
+  },
+];
+
+const experience = [
+  {
+    title: "Front End Developer",
+    company: "MSVN Distributed Systems Ltd.",
+    link: "https://msvn.ca",
+    desc: "Created client applications with React on the Cardano blockchain. Also contribute to the back end of applications. Built several NFT launches, NFT upgrades and an auction house with live chat and memberships.",
+    rating: 8.7,
+  },
+];
+
+const links = [
+  {
+    index: "fa-solid fa-envelope",
+    name: "me@mamoor.dev",
+    url: "mailto:me@mamoor.dev",
+  },
+  {
+    index: "fa-brands fa-linkedin",
+    name: "Mamoor Jaan Khan",
+    url: "https://www.linkedin.com/in/mamoor-jaan-khan/",
+  },
+  {
+    index: "fa-brands fa-github",
+    name: "LowNightSnack",
+    url: "https://github.com/LowNightSnack",
+  },
+  {
+    index: "fa-brands fa-instagram",
+    name: "Mamoor",
+    url: "https://www.instagram.com/lownightsnack/",
+  },
+  {
+    index: "fa-brands fa-x-twitter",
+    name: "MamoorJaanKhan",
+    url: "https://twitter.com/MamoorJaanKhan",
+  },
 ];
 
 const Home = () => {
@@ -67,6 +162,13 @@ const Home = () => {
       <Head>
         <title>Mamoor Jaan Khan</title>
         <link rel="icon" href="/logo.png" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
       </Head>
       {heroCards.map((card, i) => (
         <Fragment key={`heroCard#${i}`}>
@@ -122,15 +224,63 @@ const Home = () => {
       </h3>
       <div className="relative z-10">
         <div className="sticky top-0 bg-cl1 w-full pl-4 md:pl-8 py-5">
-          <h1 className="text-cl3 text-7xl font-minecraft">Projects</h1>
+          <h1
+            className="text-cl3 text-3xl md:text-7xl font-minecraft"
+            id="#experience"
+          >
+            Experience
+          </h1>
         </div>
-        <div className="bg-cl3 w-full grid grid-cols-2 gap-y-20 py-20 px-20">
-          {projects.map((i) => (
+        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 py-10 md:py-20 px-5 md:px-20">
+          {experience.map((e, i) => (
+            <Experience
+              key={`experience#${i}`}
+              title={e.title}
+              company={e.company}
+              link={e.link}
+              desc={e.desc}
+              rating={e.rating}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="relative z-10">
+        <div className="sticky top-0 bg-cl1 w-full pl-4 md:pl-8 py-5">
+          <h1
+            className="text-cl3 text-3xl md:text-7xl font-minecraft"
+            id="#contact-me"
+          >
+            Contact Me
+          </h1>
+        </div>
+        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-start gap-y-10 md:gap-y-20 py-10 md:py-20 px-5 md:px-20">
+          {links.map((l, i) => (
+            <ProfileLink
+              key={`link#${i}`}
+              index={l.index}
+              name={l.name}
+              url={l.url}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="relative z-10">
+        <div className="sticky top-0 bg-cl1 w-full pl-4 md:pl-8 py-5">
+          <h1
+            className="text-cl3 text-3xl md:text-7xl font-minecraft"
+            id="#projects"
+          >
+            Projects
+          </h1>
+        </div>
+        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 py-10 md:py-20 px-5 md:px-20">
+          {projects.map((p, i) => (
             <Project
-              title={i.title}
-              link={i.link}
-              desc={i.desc}
-              rating={i.rating}
+              key={`project#${i}`}
+              title={p.title}
+              link={p.link}
+              desc={p.desc}
+              rating={p.rating}
             />
           ))}
         </div>

@@ -30,3 +30,7 @@ body {
 .font-wavefont {
   font-family: "Wavefont", cursive;
 }
+
+.reversePullUp:hover + div {
+  transform: translate(-1rem, 1rem);
+}
