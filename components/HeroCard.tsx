@@ -10,6 +10,7 @@ const HeroCard = ({
   index: number;
 }) => (
   <div
+    id={`${index + 1}`}
     className={`relative bg-cl${index + 1} h-screen flex flex-col`}
     style={{ zIndex: `${index + 1}` }}
   >

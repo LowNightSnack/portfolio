@@ -166,8 +166,8 @@ const Home = () => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
         />
       </Head>
       {heroCards.map((card, i) => (
@@ -178,7 +178,8 @@ const Home = () => {
             addClasses={card.addClasses}
             index={i}
           />
-          <div
+          <a
+            href={`#${i + 1}`}
             className={`fixed bottom-0 right-0 bg-cl${
               i + 1
             } rounded-tl-full h-${5 - i}00px w-${5 - i}00px md:h-700px md:h-${
