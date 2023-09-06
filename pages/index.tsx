@@ -99,6 +99,12 @@ const projects = [
     rating: 8,
   },
   {
+    title: "Modelec clone",
+    link: "https://lnx-modelec-clone.vercel.app/",
+    desc: "Modelec was a super cool website and I thought it would be pretty cool if I could clone it. Built with NextJS, TailwindCSS.",
+    rating: 8,
+  },
+  {
     title: "CPUS website",
     link: "https://www.cpus.co.in",
     desc: "The first buck I made was building this for my friend's parents' business. Was awesome. Built with NextJS, Bulma",

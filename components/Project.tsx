@@ -9,7 +9,7 @@ const Project = ({
   title: string;
   link: string;
   desc: string;
-  rating: number;
+  rating: string | number;
 }) => (
   <div className="isolate relative max-w-[600px] lg:col-start-2">
     <div className="reversePullUp bg-cl2 w-full p-8 flex flex-col gap-5">
