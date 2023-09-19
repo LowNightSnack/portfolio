@@ -126,10 +126,17 @@ const projects = [
 
 const experience = [
   {
+    title: "Software Developer",
+    company: "StarSoftware",
+    link: "https://starsoftware.co",
+    desc: "Sept 2023. Currently working here.",
+    rating: "N.A.",
+  },
+  {
     title: "Front End Developer",
     company: "MSVN Distributed Systems Ltd.",
     link: "https://msvn.ca",
-    desc: "Created client applications with React on the Cardano blockchain. Also contribute to the back end of applications. Built several NFT launches, NFT upgrades and an auction house with live chat and memberships.",
+    desc: "Jun 2022 to Aug 2023. Created client applications with React on the Cardano blockchain. Also contribute to the back end of applications. Built several NFT launches, NFT upgrades and an auction house with live chat and memberships.",
     rating: 8.7,
   },
 ];
