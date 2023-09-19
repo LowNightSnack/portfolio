@@ -26,7 +26,7 @@ const Experience = ({
         {company}
         {link ? (
           <a
-            className="p-1 w-fit h-fit hover:text-cl2 hover:rotate-[720deg] duration-1000 transition-transform"
+            className="p-1 w-fit h-fit hover:text-cl5 hover:rotate-[720deg] duration-1000 transition-transform"
             href={link}
             target="_blank"
           >
