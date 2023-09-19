@@ -129,6 +129,9 @@ const experience = [
     title: "Software Developer",
     company: "StarSoftware",
     link: "https://starsoftware.co",
+    joinDate: "Sept 2023",
+    leaveDate: null,
+    monthsWorked: null,
     desc: "Sept 2023. Currently working here.",
     rating: "N.A.",
   },
@@ -136,6 +139,9 @@ const experience = [
     title: "Front End Developer",
     company: "MSVN Distributed Systems Ltd.",
     link: "https://msvn.ca",
+    joinDate: "Jun 2022",
+    leaveDate: "Aug 2023",
+    monthsWorked: "13",
     desc: "Jun 2022 to Aug 2023. Created client applications with React on the Cardano blockchain. Also contribute to the back end of applications. Built several NFT launches, NFT upgrades and an auction house with live chat and memberships.",
     rating: 8.7,
   },
@@ -197,7 +203,7 @@ const Home = () => {
               i + 1
             } rounded-tl-full h-${5 - i}00px w-${5 - i}00px md:h-700px md:h-${
               7 - i
-            }00px  md:w-${7 - i}00px`}
+            }00px md:w-${7 - i}00px`}
             style={{
               zIndex: `${i}`,
             }}
@@ -245,13 +251,16 @@ const Home = () => {
             Experience
           </h1>
         </div>
-        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 py-10 md:py-20 px-5 md:px-20">
+        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 gap-x-10 py-10 md:py-20 px-5 md:px-20">
           {experience.map((e, i) => (
             <Experience
               key={`experience#${i}`}
               title={e.title}
               company={e.company}
               link={e.link}
+              joinDate={e.joinDate}
+              leaveDate={e.leaveDate}
+              monthsWorked={e.monthsWorked}
               desc={e.desc}
               rating={e.rating}
             />
@@ -287,7 +296,7 @@ const Home = () => {
             Projects
           </h1>
         </div>
-        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 py-10 md:py-20 px-5 md:px-20">
+        <div className="bg-cl3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-start gap-y-20 gap-x-10 py-10 md:py-20 px-5 md:px-20">
           {projects.map((p, i) => (
             <Project
               key={`project#${i}`}
